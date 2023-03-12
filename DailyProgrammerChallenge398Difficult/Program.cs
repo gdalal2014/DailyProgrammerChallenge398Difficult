@@ -22,7 +22,8 @@ namespace DailyProgrammerChallenge398Difficult
             {
                 Console.WriteLine("Please Provide an argument");
             }
-
+            var testTimer = new Stopwatch();
+            testTimer.Start();
             var testMatrix = new long[,]{{ 123456789, 752880530, 826085747, 576968456, 721429729},
                                         {173957326, 1031077599,  407299684,  67656429,    96549194  },
                                         {1048156299, 663035648,   604085049,  1017819398,  325233271 },
@@ -31,6 +32,9 @@ namespace DailyProgrammerChallenge398Difficult
                                        };
             var smallestSumValueTest = SmallestSum(testMatrix, testMatrix.GetLength(0), testMatrix.GetLength(1));
             var sumOfDigitsTest = smallestSumValueTest.ToString().Sum(c => c - '0');
+            testTimer.Stop();
+            Console.WriteLine($"The Smallest Sum is: {smallestSumValueTest} and the sum of the digits are {sumOfDigitsTest}");
+            Console.WriteLine($"It took {testTimer.Elapsed} to process");
 
             for (int i = 0; i < args.Length; i++)
             {
